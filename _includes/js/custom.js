@@ -1,5 +1,5 @@
 
-$( document ).ready(function() {
+$(function() {
     feedbackOnGithub.init(
         {
             username:"Possum-Labs",

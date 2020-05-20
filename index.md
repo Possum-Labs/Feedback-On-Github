@@ -16,14 +16,14 @@ Include the following references
 <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-<script src="https://feedback-on-github.possumlabs.com/src/feedback.css"></script>
-<script src="https://feedback-on-github.possumlabs.com/src/feedback.js"></script>
+<script src="http://feedback-on-github.possumlabs.com/src/feedback.css"></script>
+<script src="http://feedback-on-github.possumlabs.com/src/feedback.js"></script>
 ```
 
 and the following javascript
 
 ```javascript
-$(document).ready(function() {
+$(function() {
     feedbackOnGithub.init(
         {
             username:"Possum-Labs",
