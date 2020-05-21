@@ -75,7 +75,7 @@ feedbackOnGithub.init = function(config){
             Vue.component('issue-view',{
                 props: ['issue'], 
                 template: '<div class="issue">'+
-                '<button v-on:click="$emit('+'"'+'toggle-commnets'+'"'+', issue)">'+
+                '<button v-on:click="$emit('+"'"+'toggle-commnets'+"'"+', issue)">'+
                    '<span v-if="!issue.expand" class="iconify" data-icon="mdi:chevron-down-circle" data-inline="false"></span>'+
                    '<span v-if="issue.expand" class="iconify" data-icon="mdi:chevron-up-circle" data-inline="false"></span>'+
                 '</button>'+
