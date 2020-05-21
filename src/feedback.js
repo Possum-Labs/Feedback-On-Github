@@ -83,8 +83,8 @@ feedbackOnGithub.init = function(config){
                 props: ['issue'], 
                 template: '<div class="issue">'+
                 '<button v-on:click="$emit('+"'"+'toggle-commnets'+"'"+', issue)">'+
-                   '<span v-if="issue.expand" class="iconify" data-icon="mdi:chevron-up-circle" data-inline="false"></span>'+
-                   '<span v-else class="iconify" data-icon="mdi:chevron-down-circle" data-inline="false"></span>'+
+                   '<span v-show="issue.expand" class="iconify" data-icon="mdi:chevron-up-circle" data-inline="false"></span>'+
+                   '<span v-show="!issue.expand" class="iconify" data-icon="mdi:chevron-down-circle" data-inline="false"></span>'+
                 '</button>'+
                 '<label> {{ issue.title }} </label>'+
                 '<a v-bind:href="issue.html_url" target="_blank">#{{issue.number}}</a> '+
