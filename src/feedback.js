@@ -33,6 +33,8 @@ feedbackOnGithub.init = function(config){
                 githubFeedbackUrl:githubProjectUrl + "/issues/new/choose",
                 openCount: 0,
                 closedCount:0,
+                viewOpen: true,
+                viewClosed: false,
                 openIssues:[],
                 closedIssues:[]
             };
@@ -55,9 +57,26 @@ feedbackOnGithub.init = function(config){
                 });
             });
 
+            Vue.component('issue-view',
+                props: ['issue'], {
+                template: '<lable> {{ issue.title }} </lable>'+
+                '<a v-bind:href="issue.html_url" target="_blank">#{{issue.number}}</a> '+
+                'created on {{issue.created_at}} by {{issue.user.login}}'
+                });
+
             var app = new Vue({
                 el: '#feedback-app',
-                data: dataModel
+                data: dataModel,
+                methods:{
+                    viewOpen: function() {
+                        dataModel.viewOpen = true;
+                        dataModel.viewClosed = false;
+                    },
+                    viewClosed: function() {
+                        dataModel.viewOpen = false;
+                        dataModel.viewClosed = true;
+                    }
+                }
             });
         });
     }

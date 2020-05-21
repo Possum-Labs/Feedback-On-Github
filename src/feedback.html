@@ -8,12 +8,12 @@
                 Send feedback about
             </p>
             <div >
-                <a v-bind:href="projectFeedbackUrl"  class="button-links" target="_blank">
+                <a v-bind:href="projectFeedbackUrl"   target="_blank">
                     <span >
                         This project</span>
                     <span class="iconify" data-icon="mdi-exit-to-app" data-inline="false"></span></a>
 
-                <a v-bind:href="pageFeedbackUrl"  class="button-links" target="_blank">
+                <a v-bind:href="pageFeedbackUrl"   target="_blank">
                     <span >
                         This page</span>
                     <span class="iconify" data-icon="mdi-exit-to-app" data-inline="false"></span></a>
@@ -28,24 +28,33 @@
         </div>
         <div>
 
-            <ul class="nav nav-tabs"  role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active"  data-toggle="tab" href="#open-issues" role="tab"
-                        aria-controls="open-issues" aria-selected="true">Open ( {{openCount}} )</a>
+            <ul role="tablist">
+                <li >
+                    <a   data-toggle="tab" href="#open-issues" role="tab"
+                        aria-controls="open-issues" aria-selected="true"
+                        v-on:click="viewOpen"
+                        >Open ( {{openCount}} )</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link"  data-toggle="tab" href="#closed-issues" role="tab"
-                        aria-controls="closed-issues" aria-selected="false">Closed ( {{closedCount}} )</a>
+                <li >
+                    <a   data-toggle="tab" href="#closed-issues" role="tab"
+                        aria-controls="closed-issues" aria-selected="false"
+                        v-on:click="viewOpen"
+                        >Closed ( {{closedCount}} )</a>
                 </li>
             </ul>
-            <div class="tab-content" >
-                <div class="tab-pane fade show active"  role="tabpanel"
+            <div  >
+                <div role="tabpanel"
+                    v-if="viewOpen"
                     aria-labelledby="open-issues-tab">
-                    <div v-for="issue in openIssues">
-                        {{ issue.title }}
-                    </div>
+
+                    <issue-view
+                        v-for="issue in openIssues"
+                        v-bind:issue="issue"
+                        ></issue-view>
                 </div>
-                <div class="tab-pane fade"  role="tabpanel" aria-labelledby="closed-issues-tab">
+                <div role="tabpanel" 
+                    v-if="viewClosed"
+                    aria-labelledby="closed-issues-tab">
                     <div v-for="issue in closedIssues">
                         {{ issue.title }}
                     </div>
