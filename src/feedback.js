@@ -88,7 +88,7 @@ feedbackOnGithub.init = function(config){
                 'created on {{issue.created_at}} by {{issue.user.login}}'+
                 '<span class="comment-count" v-if="issue.comments > 0"><span class="iconify" data-icon="mdi:comment-outline" data-inline="false"></span> {{issue.comments}}</span>'+
                 '<div v-if="issue.expand"> <comment-view '+
-                    'v-for="comment in commentItems" '+
+                    'v-for="comment in issue.commentItems" '+
                     'v-bind:comment="comment" '+
                 '></comment-view> </div>'+
                 '</div>'
