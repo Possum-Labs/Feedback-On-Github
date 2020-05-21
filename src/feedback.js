@@ -48,6 +48,7 @@ feedbackOnGithub.init = function(config){
                 data.items.forEach(element => {
                     element.commentItems=[];
                     element.expand = false;
+                    element.body_nice = element.body.substring(0,element.body.indexOf("--"));
                     if(element.state === "closed"){
                         dataModel.closedCount++;
                         dataModel.closedIssues.push(element);
@@ -90,7 +91,7 @@ feedbackOnGithub.init = function(config){
                 'created on {{issue.created_at}} by {{issue.user.login}}'+
                 '<span class="comment-count" v-if="issue.comments > 0"><span class="iconify" data-icon="mdi:comment-outline" data-inline="false"></span> {{issue.comments}}</span>'+
                 '<div v-if="issue.expand"> '+
-                '{{issue.body}}'+
+                '{{issue.body_nice}}'+
                 '<comment-view '+
                     'v-for="comment in issue.commentItems" '+
                     'v-bind:comment="comment" '+
@@ -114,7 +115,7 @@ feedbackOnGithub.init = function(config){
                         issue.expand=!issue.expand;
                         if(issue.commentItems.length < issue.comments){
                             $.ajax({
-                                url: "https://api.github.com/search/issues/"+issue.number+
+                                url: "https://api.github.com/search/issues/"+issue.id+
                                 "/comments?page=1&per_page=100" 
                             }).then(function(data) {
                                 data.forEach(comment => {
