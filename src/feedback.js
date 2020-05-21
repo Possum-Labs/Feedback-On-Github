@@ -68,11 +68,11 @@ feedbackOnGithub.init = function(config){
                 el: '#feedback-app',
                 data: dataModel,
                 methods:{
-                    viewOpen: function() {
+                    viewOpenClick: function() {
                         dataModel.viewOpen = true;
                         dataModel.viewClosed = false;
                     },
-                    viewClosed: function() {
+                    viewClosedClick: function() {
                         dataModel.viewOpen = false;
                         dataModel.viewClosed = true;
                     }

@@ -32,13 +32,13 @@
                 <li >
                     <a   data-toggle="tab" href="#open-issues" role="tab"
                         aria-controls="open-issues" aria-selected="true"
-                        v-on:click="viewOpen"
+                        v-on:click="viewOpenClick"
                         >Open ( {{openCount}} )</a>
                 </li>
                 <li >
                     <a   data-toggle="tab" href="#closed-issues" role="tab"
                         aria-controls="closed-issues" aria-selected="false"
-                        v-on:click="viewOpen"
+                        v-on:click="viewOpenClick"
                         >Closed ( {{closedCount}} )</a>
                 </li>
             </ul>
@@ -55,9 +55,12 @@
                 <div role="tabpanel" 
                     v-if="viewClosed"
                     aria-labelledby="closed-issues-tab">
-                    <div v-for="issue in closedIssues">
-                        {{ issue.title }}
-                    </div>
+
+                    <issue-view
+                    v-for="issue in closedIssues"
+                    v-bind:issue="issue"
+                    ></issue-view>
+                    
                 </div>
             </div>
         </div>
