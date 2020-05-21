@@ -73,7 +73,7 @@ feedbackOnGithub.init = function(config){
                 '		</a>'+
                 '					</span>'+
                 '				</h4>'+
-                '<div class="comment-body>'+
+                '<div class="comment-body">'+
                 ' {{comment.body}} '+
                 '</div>' +
                 '</article>'
