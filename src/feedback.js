@@ -47,6 +47,7 @@ feedbackOnGithub.init = function(config){
             }).then(function(data) {
                 data.items.forEach(element => {
                     element.commentItems=[];
+                    element.expand = false;
                     if(element.state === "closed"){
                         dataModel.closedCount++;
                         dataModel.closedIssues.push(element);
@@ -62,13 +63,16 @@ feedbackOnGithub.init = function(config){
                 props: ['comment'], 
                 template: '<article class="comment">'+
                 '<h4 class="comment-title">'+
-				'		<span class="comment-meta">'+
-				'			<a class="comment-author muted-link" v-bind:href="https://github.com/MonikaReddy-MSFT" data-bi-name="github-issue-comment-user">MonikaReddy-MSFT</a> commented '+
-                '		<a class="comment-date muted-link" v-bind:href="https://github.com/MicrosoftDocs/azure-docs-cli/issues/1673#issuecomment-557373687" data-bi-name="github-issue-comment">'+
-                '			<time v-bind:datetime="2019-11-22T03:34:17Z">on Nov 21, 2019</time>'+
+				'		<span>'+
+                '			<a class="comment-author" '+
+                'v-bind:href="comment.user.url">{{comment.user.login}}</a> commented '+
+                '		<a class="comment-date" '+
+                'v-bind:href="comment.html_url">'+
+                '			<time v-bind:datetime="comment.created_at">on {{comment.created_at_local}}</time>'+
                 '		</a>'+
                 '					</span>'+
                 '				</h4>'+
+                ' {{comment.body}} '+
                 '</article>'
                 });
 
@@ -83,7 +87,10 @@ feedbackOnGithub.init = function(config){
                 '<a v-bind:href="issue.html_url" target="_blank">#{{issue.number}}</a> '+
                 'created on {{issue.created_at}} by {{issue.user.login}}'+
                 '<span class="comment-count" v-if="issue.comments > 0"><span class="iconify" data-icon="mdi:comment-outline" data-inline="false"></span> {{issue.comments}}</span>'+
-                '<div v-if="issue.expand"> </div>'+
+                '<div v-if="issue.expand"> <comment-view '+
+                    'v-for="comment in commentItems" '+
+                    'v-bind:comment="comment" '+
+                '></comment-view> </div>'+
                 '</div>'
                 });
 
@@ -101,6 +108,15 @@ feedbackOnGithub.init = function(config){
                     },
                     expandIssueClick: function(issue) {
                         issue.expand=!issue.expand;
+                        if(issuesNew.comments.lenght < issue.comments)
+                        $.ajax({
+                            url: "https://api.github.com/search/issues/"+issue.number+"?"+
+                            "/comments?page=1&per_page=100" 
+                        }).then(function(data) {
+                            data.forEach(comment => {
+                                issue.commentItems.push(comment);
+                            });
+                        });
                     }
                 }
             });
