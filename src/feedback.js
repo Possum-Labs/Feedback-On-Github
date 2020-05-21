@@ -68,7 +68,7 @@ feedbackOnGithub.init = function(config){
                 '<a v-bind:href="issue.html_url" target="_blank">#{{issue.number}}</a> '+
                 'created on {{issue.created_at}} by {{issue.user.login}}'+
                 'comments {{issue.comments}}'+
-                '<div v-if="issue.expand"> <div>'+
+                '<div v-if="issue.expand"> </div>'+
                 '</div>'
                 });
 
