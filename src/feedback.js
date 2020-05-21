@@ -108,7 +108,7 @@ feedbackOnGithub.init = function(config){
                     },
                     expandIssueClick: function(issue) {
                         issue.expand=!issue.expand;
-                        if(issue.commentItems.lenght < issue.comments){
+                        if(issue.commentItems.length < issue.comments){
                             $.ajax({
                                 url: "https://api.github.com/search/issues/"+issue.number+"?"+
                                 "/comments?page=1&per_page=100" 
