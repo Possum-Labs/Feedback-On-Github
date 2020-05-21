@@ -30,16 +30,16 @@
 
             <ul role="tablist">
                 <li >
-                    <a   data-toggle="tab" href="#open-issues" role="tab"
-                        aria-controls="open-issues" aria-selected="true"
+                    <button data-toggle="tab" role="tab"
+                        aria-controls="open-issues"
                         v-on:click="viewOpenClick"
-                        >Open ( {{openCount}} )</a>
+                        >Open ({{openCount}})</button>
                 </li>
                 <li >
-                    <a   data-toggle="tab" href="#closed-issues" role="tab"
-                        aria-controls="closed-issues" aria-selected="false"
+                    <button   data-toggle="tab" role="tab"
+                        aria-controls="closed-issues"
                         v-on:click="viewOpenClick"
-                        >Closed ( {{closedCount}} )</a>
+                        >Closed ({{closedCount}})</button>
                 </li>
             </ul>
             <div  >
@@ -60,7 +60,7 @@
                     v-for="issue in closedIssues"
                     v-bind:issue="issue"
                     ></issue-view>
-                    
+
                 </div>
             </div>
         </div>

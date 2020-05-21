@@ -59,9 +59,14 @@ feedbackOnGithub.init = function(config){
 
             Vue.component('issue-view',{
                 props: ['issue'], 
-                template: '<div><label> {{ issue.title }} </label>'+
+                template: '<div>'+
+                '<button v-on:click="expandIssueClick(issue)"></button>'+
+                '<label> {{ issue.title }} </label>'+
                 '<a v-bind:href="issue.html_url" target="_blank">#{{issue.number}}</a> '+
-                'created on {{issue.created_at}} by {{issue.user.login}}</div>'
+                'created on {{issue.created_at}} by {{issue.user.login}}'+
+                'comments {{issue.comments}}'+
+                '<div v-if="issue.expand"> <div>'+
+                '</div>'
                 });
 
             var app = new Vue({
@@ -75,6 +80,9 @@ feedbackOnGithub.init = function(config){
                     viewClosedClick: function() {
                         dataModel.viewOpen = false;
                         dataModel.viewClosed = true;
+                    },
+                    expandIssueClick: function(issue) {
+                        issue.expand=true;
                     }
                 }
             });
