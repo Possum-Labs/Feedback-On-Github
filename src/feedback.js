@@ -46,6 +46,7 @@ feedbackOnGithub.init = function(config){
                 "&sort=created&order=desc"
             }).then(function(data) {
                 data.items.forEach(element => {
+                    element.commentItems=[];
                     if(element.state === "closed"){
                         dataModel.closedCount++;
                         dataModel.closedIssues.push(element);
@@ -67,7 +68,7 @@ feedbackOnGithub.init = function(config){
                 '<label> {{ issue.title }} </label>'+
                 '<a v-bind:href="issue.html_url" target="_blank">#{{issue.number}}</a> '+
                 'created on {{issue.created_at}} by {{issue.user.login}}'+
-                'comments {{issue.comments}}'+
+                '<span v-if="issue.comments > 0"><span class="iconify" data-icon="mdi:comment-outline" data-inline="false"></span> {{issue.comments}}</span>'+
                 '<div v-if="issue.expand"> </div>'+
                 '</div>'
                 });
