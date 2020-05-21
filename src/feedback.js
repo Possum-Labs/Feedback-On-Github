@@ -57,8 +57,8 @@ feedbackOnGithub.init = function(config){
                 });
             });
 
-            Vue.component('issue-view',
-                props: ['issue'], {
+            Vue.component('issue-view',{
+                props: ['issue'], 
                 template: '<lable> {{ issue.title }} </lable>'+
                 '<a v-bind:href="issue.html_url" target="_blank">#{{issue.number}}</a> '+
                 'created on {{issue.created_at}} by {{issue.user.login}}'
