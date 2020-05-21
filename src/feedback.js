@@ -49,6 +49,7 @@ feedbackOnGithub.init = function(config){
                     element.commentItems=[];
                     element.expand = false;
                     element.body_nice = element.body.substring(0,element.body.indexOf("--"));
+                    comment.created_at_local = new Date(comment.created_at).toLocaleString();
                     if(element.state === "closed"){
                         dataModel.closedCount++;
                         dataModel.closedIssues.push(element);
@@ -62,41 +63,52 @@ feedbackOnGithub.init = function(config){
 
             Vue.component('comment-view',{
                 props: ['comment'], 
-                template: '<article class="comment">'+
-                '<h4 class="comment-title">'+
-				'		<span>'+
-                '			<a class="comment-author" '+
-                'v-bind:href="comment.user.url">{{comment.user.login}}</a> commented '+
-                '		<a class="comment-date" '+
-                'v-bind:href="comment.html_url">'+
-                '			<time v-bind:datetime="comment.created_at">on {{comment.created_at_local}}</time>'+
-                '		</a>'+
-                '					</span>'+
-                '				</h4>'+
-                '<div class="comment-body">'+
-                ' {{comment.body}} '+
-                '</div>' +
-                '</article>'
+                template: `
+                <article class="comment">
+                    <h4 class="comment-title">
+						<span>
+                            <a class="comment-author" v-bind:href="comment.user.url">
+                                {{comment.user.login}}
+                            </a> 
+                            commented 
+                		    <a class="comment-date" v-bind:href="comment.html_url">
+                			    <time v-bind:datetime="comment.created_at">on {{comment.created_at_local}}</time>
+                		    </a>
+                		</span>
+            		</h4>
+                    <div class="comment-body">
+                        {{comment.body}} 
+                    </div>
+                </article>`
                 });
 
             Vue.component('issue-view',{
                 props: ['issue'], 
-                template: '<div class="issue">'+
-                '<button v-on:click="$emit('+"'"+'toggle-commnets'+"'"+', issue)">'+
-                '<div v-show="issue.expand"><span  class="iconify" data-icon="mdi:chevron-up-circle" data-inline="false"></span></div>'+
-                '<div v-show="!issue.expand"><span class="iconify" data-icon="mdi:chevron-down-circle" data-inline="false"></span></div>'+
-                '</button>'+
-                '<label> {{ issue.title }} </label>'+
-                '<a v-bind:href="issue.html_url" target="_blank">#{{issue.number}}</a> '+
-                'created on {{issue.created_at}} by {{issue.user.login}}'+
-                '<span class="comment-count" v-if="issue.comments > 0"><span class="iconify" data-icon="mdi:comment-outline" data-inline="false"></span> {{issue.comments}}</span>'+
-                '<div v-if="issue.expand"> '+
-                '{{issue.body_nice}}'+
-                '<comment-view '+
-                    'v-for="comment in issue.commentItems" '+
-                    'v-bind:comment="comment" '+
-                '></comment-view> </div>'+
-                '</div>'
+                template: `
+                <div class="issue">
+                    <button v-on:click="$emit('+"'"+'toggle-commnets'+"'"+', issue)">
+                        <div v-show="issue.expand">
+                            <span  class="iconify" data-icon="mdi:chevron-up-circle" data-inline="false"></span>
+                        </div>
+                        <div v-show="!issue.expand">
+                            <span class="iconify" data-icon="mdi:chevron-down-circle" data-inline="false"></span>
+                        </div>
+                    </button>
+                    <label> {{ issue.title }} </label>
+                    <a v-bind:href="issue.html_url" target="_blank">#{{issue.number}}</a> 
+                    <time v-bind:datetime="issue.created_at">created on {{issue.created_at_local}}</time>
+                    by {{issue.user.login}}
+                    <span class="comment-count" v-if="issue.comments > 0">
+                        <span class="iconify" data-icon="mdi:comment-outline" data-inline="false"></span>
+                        {{issue.comments}}
+                    </span>
+                    <div v-if="issue.expand"> 
+                        {{issue.body_nice}}
+                        <comment-view 
+                            v-for="comment in issue.commentItems" 
+                            v-bind:comment="comment"></comment-view> 
+                    </div>
+                </div>`
                 });
 
             var app = new Vue({
@@ -119,6 +131,7 @@ feedbackOnGithub.init = function(config){
                                 "/comments?page=1&per_page=100" 
                             }).then(function(data) {
                                 data.forEach(comment => {
+                                    comment.created_at_local = new Date(comment.created_at).toLocaleString();
                                     issue.commentItems.push(comment);
                                 });
                             });
