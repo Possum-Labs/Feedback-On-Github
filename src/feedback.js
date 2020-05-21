@@ -49,7 +49,7 @@ feedbackOnGithub.init = function(config){
                     element.commentItems=[];
                     element.expand = false;
                     element.body_nice = element.body.substring(0,element.body.indexOf("--"));
-                    comment.created_at_local = new Date(comment.created_at).toLocaleString();
+                    element.created_at_local = new Date(element.created_at).toLocaleString();
                     if(element.state === "closed"){
                         dataModel.closedCount++;
                         dataModel.closedIssues.push(element);
@@ -86,7 +86,7 @@ feedbackOnGithub.init = function(config){
                 props: ['issue'], 
                 template: `
                 <div class="issue">
-                    <button v-on:click="$emit('+"'"+'toggle-commnets'+"'"+', issue)">
+                    <button v-on:click="$emit('toggle-commnets', issue)">
                         <div v-show="issue.expand">
                             <span  class="iconify" data-icon="mdi:chevron-up-circle" data-inline="false"></span>
                         </div>
@@ -94,7 +94,7 @@ feedbackOnGithub.init = function(config){
                             <span class="iconify" data-icon="mdi:chevron-down-circle" data-inline="false"></span>
                         </div>
                     </button>
-                    <label> {{ issue.title }} </label>
+                    <label>{{issue.title}}</label>
                     <a v-bind:href="issue.html_url" target="_blank">#{{issue.number}}</a> 
                     <time v-bind:datetime="issue.created_at">created on {{issue.created_at_local}}</time>
                     by {{issue.user.login}}
