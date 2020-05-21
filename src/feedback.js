@@ -60,15 +60,22 @@ feedbackOnGithub.init = function(config){
 
             Vue.component('comment-view',{
                 props: ['comment'], 
-                template: '<div class="comment">'+
-
-                '</div>'
+                template: '<article class="comment">'+
+                '<h4 class="comment-title">'+
+				'		<span class="comment-meta">'+
+				'			<a class="comment-author muted-link" v-bind:href="https://github.com/MonikaReddy-MSFT" data-bi-name="github-issue-comment-user">MonikaReddy-MSFT</a> commented '+
+                '		<a class="comment-date muted-link" v-bind:href="https://github.com/MicrosoftDocs/azure-docs-cli/issues/1673#issuecomment-557373687" data-bi-name="github-issue-comment">'+
+                '			<time v-bind:datetime="2019-11-22T03:34:17Z">on Nov 21, 2019</time>'+
+                '		</a>'+
+                '					</span>'+
+                '				</h4>'+
+                '</article>'
                 });
 
             Vue.component('issue-view',{
                 props: ['issue'], 
                 template: '<div class="issue">'+
-                '<button v-on:click="expandIssueClick(issue)">'+
+                '<button v-on:click="$emit("toggle-commnets", issue)">'+
                    '<span v-if="!issue.expand" class="iconify" data-icon="mdi:chevron-down-circle" data-inline="false"></span>'+
                    '<span v-if="issue.expand" class="iconify" data-icon="mdi:chevron-up-circle" data-inline="false"></span>'+
                 '</button>'+
