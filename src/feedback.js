@@ -58,9 +58,16 @@ feedbackOnGithub.init = function(config){
                 });
             });
 
+            Vue.component('comment-view',{
+                props: ['comment'], 
+                template: '<div class="comment">'+
+
+                '</div>'
+                });
+
             Vue.component('issue-view',{
                 props: ['issue'], 
-                template: '<div>'+
+                template: '<div class="issue">'+
                 '<button v-on:click="expandIssueClick(issue)">'+
                    '<span v-if="!issue.expand" class="iconify" data-icon="mdi:chevron-down-circle" data-inline="false"></span>'+
                    '<span v-if="issue.expand" class="iconify" data-icon="mdi:chevron-up-circle" data-inline="false"></span>'+
@@ -68,7 +75,7 @@ feedbackOnGithub.init = function(config){
                 '<label> {{ issue.title }} </label>'+
                 '<a v-bind:href="issue.html_url" target="_blank">#{{issue.number}}</a> '+
                 'created on {{issue.created_at}} by {{issue.user.login}}'+
-                '<span v-if="issue.comments > 0"><span class="iconify" data-icon="mdi:comment-outline" data-inline="false"></span> {{issue.comments}}</span>'+
+                '<span class="comment-count" v-if="issue.comments > 0"><span class="iconify" data-icon="mdi:comment-outline" data-inline="false"></span> {{issue.comments}}</span>'+
                 '<div v-if="issue.expand"> </div>'+
                 '</div>'
                 });
