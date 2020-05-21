@@ -108,15 +108,16 @@ feedbackOnGithub.init = function(config){
                     },
                     expandIssueClick: function(issue) {
                         issue.expand=!issue.expand;
-                        if(issuesNew.commentItems.lenght < issue.comments)
-                        $.ajax({
-                            url: "https://api.github.com/search/issues/"+issue.number+"?"+
-                            "/comments?page=1&per_page=100" 
-                        }).then(function(data) {
-                            data.forEach(comment => {
-                                issue.commentItems.push(comment);
+                        if(issue.commentItems.lenght < issue.comments){
+                            $.ajax({
+                                url: "https://api.github.com/search/issues/"+issue.number+"?"+
+                                "/comments?page=1&per_page=100" 
+                            }).then(function(data) {
+                                data.forEach(comment => {
+                                    issue.commentItems.push(comment);
+                                });
                             });
-                        });
+                        }
                     }
                 }
             });
