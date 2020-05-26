@@ -17,7 +17,7 @@ Include the following references
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <script src="https://feedback-on-github.possumlabs.com/src/feedback.css"></script>
-<script src="https://feedback-on-github.possumlabs.com/src/feedback.js"></script>
+<link rel="stylesheet" type="text/css" href="https://feedback-on-github.possumlabs.com/src/feedback.js"></link>
 ```
 
 and the following javascript
