@@ -93,17 +93,17 @@ feedbackOnGithub.init = function(config){
                 <div class="issue">
                     <button v-on:click="$emit('toggle-commnets', issue)">
                         <div v-show="issue.expand">
-                            <span  class="iconify" data-icon="mdi:chevron-down" data-inline="false"></span>
+                            <span  class="iconify" data-icon="ic-baseline-arrow-drop-down" data-inline="false"></span>
                         </div>
                         <div v-show="!issue.expand">
-                            <span class="iconify" data-icon="mdi:chevron-right" data-inline="false"></span>
+                            <span class="iconify" data-icon="ic-baseline-arrow-right" data-inline="false"></span>
                         </div>
                     </button>
                     <a v-bind:href="issue.html_url" target="_blank">{{issue.title}} #{{issue.number}}</a> 
                     <time v-bind:datetime="issue.created_at">created on {{issue.created_at_local}}</time>
                     by {{issue.user.login}}
                     <span class="comment-count" v-if="issue.comments > 0">
-                        <span class="iconify" data-icon="mdi:comment-outline" data-inline="false"></span>
+                        <span class="iconify" data-icon="ic-outline-mode-comment" data-inline="false"></span>
                         {{issue.comments}}
                     </span>
                     <div v-if="issue.expand"> 
