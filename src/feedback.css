@@ -38,6 +38,7 @@
 }
 
 #feedback-app a.button {
+    display: inline-block;
     border-radius: 4px;
     background-color: #fff;
     color: #333;
