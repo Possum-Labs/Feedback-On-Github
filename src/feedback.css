@@ -32,7 +32,7 @@
 }
 
 .feedback-content {
-    background-color: #eee;
+    background-color: #efefef;
     border-radius: 8px;
     padding: 12px 20px;
 }
@@ -44,7 +44,6 @@
     color: #333;
     padding: 8px 12px;
     margin-right: 4px;
-    margin-bottom: 20px;
     text-decoration: none;
 }
 
@@ -67,6 +66,9 @@
 
 #feedback-app li button {
     border: none;
+    font-weight: unset;
+    font-size: 1em;
+    background: none;
 }
 
 #feedback-app li.active {
