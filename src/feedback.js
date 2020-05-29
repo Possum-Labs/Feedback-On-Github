@@ -17,6 +17,11 @@ feedbackOnGithub.init = function(config){
 
             var pathname = "Reference Path:" + window.parent.location.pathname
 
+            //for debugging but alos for manual control
+            if(config.path){
+                pathname = "Reference Path:" + config.path
+            }
+
             function pageQueuryBuilder() {
                 return "title=&amp;body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20" +
                     project + "%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20Path%3A%20" + pathname

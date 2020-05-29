@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+        <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+        <script src="feedback.css"></script>
+        <script src="feedback.js"></script>
+        <script>
+            $(function() {
+                feedbackOnGithub.init(
+                    {
+                        username:"Possum-Labs",
+                        repo:"Feedback-On-Github",
+                        path:"/"
+                    }
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <feedback></feedback>
+    </body>
+</html>
