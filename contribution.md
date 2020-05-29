@@ -24,4 +24,4 @@ First off, take a look at the code and see if you want to work on this codebase.
 From a code perspective, we care about a few things. Keep it Simple; we currently have dependencies on a few large projects (Vue.js, jQueury). Our assumption is our users utilize a desktop browser, so the size is irrelevant. Leveraging these projects, we can keep the volume of maintained code as low.  
 
 ## Last but not Least
-Read the (Code of Conduct)[]
+Read the [Code of Conduct](https://feedback-on-github.possumlabs.com/code-of-conduct.html)
