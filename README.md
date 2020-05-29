@@ -1,37 +1,37 @@
-## Welcome to GitHub Pages
+## Welcome to Feedback on Github
 
-You can use the [editor on GitHub](https://github.com/Possum-Labs/Feedback-On-Github/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Feedback on Github is a simple component to include on your documentation pages; specifically those hosted as Github pages. Not only do we want to solicit feedback, but also to show and integrate that feedback automatically back into the documentation. We want to make that as simple as including some javascript and a tag on the pages that we want to include the feedback integration for.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Setup
 
-### Markdown
+Include the following references
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+```
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+<script src="https://feedback-on-github.possumlabs.com/src/feedback.js"></script>
+<link rel="stylesheet" type="text/css" href="https://feedback-on-github.possumlabs.com/src/feedback.css"></link>
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+and the following javascript
 
-### Jekyll Themes
+```javascript
+$(function() {
+    feedbackOnGithub.init(
+        {
+            username:"Possum-Labs",
+            repo:"Feedback-On-Github"
+        }
+    );
+});
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Possum-Labs/Feedback-On-Github/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+and then a simple tag where you wish to include the feedback section
 
-### Support or Contact
+```javascript
+<feedback>
+```
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+For the full documentation (and to see it in action) please see http://feedback-on-github.possumlabs.com/

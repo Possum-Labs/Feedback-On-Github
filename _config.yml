@@ -4,3 +4,5 @@ aux_links:
   "Possum Labs DSL Feedback on Github":
     - "https://github.com/Possum-Labs/Feedback-On-Github"
 aux_links_new_tab: true
+url: "https://feedback-on-github.possumlabs.com"
+ga_tracking: UA-167778460-1

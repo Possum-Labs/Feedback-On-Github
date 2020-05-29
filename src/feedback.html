@@ -3,23 +3,24 @@
         <h2 >
             Feedback
         </h2>
-        <div >
+        <div class="feedback-content">
+        <div>
             <p >
                 Send feedback about
             </p>
-            <div >
-                <a v-bind:href="projectFeedbackUrl"   target="_blank">
+            <div>
+                <a class="button" v-bind:href="projectFeedbackUrl"   target="_blank">
                     <span >
                         This project</span>
                     <span class="iconify" data-icon="mdi-exit-to-app" data-inline="false"></span></a>
 
-                <a v-bind:href="pageFeedbackUrl"   target="_blank">
+                <a class="button" v-bind:href="pageFeedbackUrl"   target="_blank">
                     <span >
                         This page</span>
                     <span class="iconify" data-icon="mdi-exit-to-app" data-inline="false"></span></a>
 
 
-                <p >
+                <p>
                     You may leave feedback directly on
                     <a target="_blank" v-bind:href="githubFeedbackUrl" >
                         GitHub<span class="iconify" data-icon="mdi-github" data-inline="false"></span></a>.
@@ -29,13 +30,13 @@
         <div>
 
             <ul role="tablist">
-                <li >
+                <li class="tab" v-bind:class="{ active: viewOpen }" >
                     <button data-toggle="tab" role="tab"
                         aria-controls="open-issues"
                         v-on:click="viewOpenClick"
                         >Open ({{openCount}})</button>
                 </li>
-                <li >
+                <li  v-bind:class="{ active: viewClosed }" >
                     <button   data-toggle="tab" role="tab"
                         aria-controls="closed-issues"
                         v-on:click="viewClosedClick"
@@ -43,7 +44,7 @@
                 </li>
             </ul>
             <div  >
-                <div role="tabpanel"
+                <div class="tab" role="tabpanel"
                     v-if="viewOpen"
                     aria-labelledby="open-issues-tab">
 
@@ -65,6 +66,7 @@
 
                 </div>
             </div>
+        </div>
         </div>
     </section>
 </div>

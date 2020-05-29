@@ -99,8 +99,7 @@ feedbackOnGithub.init = function(config){
                             <span class="iconify" data-icon="mdi:chevron-down-circle" data-inline="false"></span>
                         </div>
                     </button>
-                    <label>{{issue.title}}</label>
-                    <a v-bind:href="issue.html_url" target="_blank">#{{issue.number}}</a> 
+                    <a v-bind:href="issue.html_url" target="_blank">{{issue.title}} #{{issue.number}}</a> 
                     <time v-bind:datetime="issue.created_at">created on {{issue.created_at_local}}</time>
                     by {{issue.user.login}}
                     <span class="comment-count" v-if="issue.comments > 0">

@@ -21,3 +21,41 @@
 .comment-date{
     
 }
+
+.tab {
+
+}
+
+#feedback-app a.button {
+border: 1px solid #eee;
+background-color: #eee;
+color: #333;
+padding: 8px 12px;
+margin-right: 4px;
+margin-bottom: 20px;
+}
+
+#feedback-app a.button:hover {
+border: 1px solid #ccc;
+background-color: #ccc;
+}
+
+#feedback-app li {
+list-style: none;
+display: inline-block;
+margin: 0;
+margin-right: 8px;
+}
+
+#feedback-app ul {
+padding-inline-start: 0;
+border-bottom: 1px solid #ccc;
+}
+
+#feedback-app li button {
+border: none;
+}
+
+#feedback-app li.active {
+font-weight: bold;
+}
