@@ -1,31 +1,3 @@
-.issue{
-
-}
-
-.comment{
-
-}
-
-.comment-count{
-
-}
-
-.comment-title{
-
-}
-
-.comment-author{
-
-}
-
-.comment-date{
-    
-}
-
-.tab {
-
-}
-
 #feedback-app {
     font-family: -apple-system,BlinkMacSystemFont,"helvetica neue",helvetica,roboto,noto,"segoe ui",arial,sans-serif;
     color: #333;
@@ -73,6 +45,10 @@
 
 #feedback-app li.active {
     font-weight: bold;
+}
+
+#feedback-app .issue {
+    margin-bottom: 12px;
 }
 
 #feedback-app .issue button {
