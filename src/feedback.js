@@ -110,7 +110,7 @@ feedbackOnGithub.init = function(config){
                         <div class="issue-body">
                             {{issue.body_nice}}
                         </div>
-                        <div class="issue-comments"
+                        <div class="issue-comments">
                             <comment-view 
                                 v-for="comment in issue.commentItems" 
                                 v-bind:comment="comment"></comment-view> 
