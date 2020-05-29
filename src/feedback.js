@@ -72,7 +72,7 @@ feedbackOnGithub.init = function(config){
                 <div class="comment">
                     <h4 class="comment-title">
 						<span>
-                            <a class="comment-author" v-bind:href="comment.user.url" target="_blank">
+                            <a class="comment-author" v-bind:href="comment.user.html_url" target="_blank">
                                 {{comment.user.login}}
                             </a> 
                             commented 
