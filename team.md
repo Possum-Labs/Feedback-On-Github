@@ -7,7 +7,7 @@ nav_order: 5
 
 ## Sarah Voegeli
 ### Contributor
-<a href="mailto:temp@temp.com"><span class="iconify" data-icon="mdi-email" data-inline="false"></span> temp@temp.com</a>  
+<a href="mailto:sarah@aprentidigital.com"><span class="iconify" data-icon="mdi-email" data-inline="false"></span> sarah@aprentidigital.com </a>  
 
 [Github <span class="iconify" data-icon="mdi-github" data-inline="false"></span>](https://github.com/svoegeli)
 

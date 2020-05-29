@@ -54,7 +54,7 @@ feedbackOnGithub.init = function(config){
                     element.commentItems=[];
                     element.expand = false;
                     element.body_nice = element.body.substring(0,element.body.indexOf("--"));
-                    element.created_at_local = new Date(element.created_at).toLocaleString();
+                    element.created_at_local = new Date(element.created_at).toLocaleDateString();
                     if(element.state === "closed"){
                         dataModel.closedCount++;
                         dataModel.closedIssues.push(element);
@@ -69,7 +69,7 @@ feedbackOnGithub.init = function(config){
             Vue.component('comment-view',{
                 props: ['comment'], 
                 template: `
-                <article class="comment">
+                <div class="comment">
                     <h4 class="comment-title">
 						<span>
                             <a class="comment-author" v-bind:href="comment.user.url">
@@ -84,7 +84,7 @@ feedbackOnGithub.init = function(config){
                     <div class="comment-body">
                         {{comment.body}} 
                     </div>
-                </article>`
+                </div>`
                 });
 
             Vue.component('issue-view',{
@@ -106,11 +106,15 @@ feedbackOnGithub.init = function(config){
                         <span class="iconify" data-icon="mdi:comment-outline" data-inline="false"></span>
                         {{issue.comments}}
                     </span>
-                    <div v-if="issue.expand"> 
-                        {{issue.body_nice}}
-                        <comment-view 
-                            v-for="comment in issue.commentItems" 
-                            v-bind:comment="comment"></comment-view> 
+                    <div class="issue-details" v-if="issue.expand"> 
+                        <div class="issue-body">
+                            {{issue.body_nice}}
+                        </div>
+                        <div class="issue-comments"
+                            <comment-view 
+                                v-for="comment in issue.commentItems" 
+                                v-bind:comment="comment"></comment-view> 
+                        </div>
                     </div>
                 </div>`
                 });

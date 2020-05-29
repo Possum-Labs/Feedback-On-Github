@@ -66,7 +66,7 @@ representative at an online or offline event.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement at
-tem@temp.com for Sarah Voegeli or
+sarah@aprentidigital.com for Sarah Voegeli or
 bas@possumlabs.com for Bas Hamer
 .
 All complaints will be reviewed and investigated promptly and fairly.
