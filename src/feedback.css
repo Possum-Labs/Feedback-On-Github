@@ -27,7 +27,7 @@
 }
 
 #feedback-app {
-    font-family: "-apple-system,BlinkMacSystemFont,"helvetica neue",helvetica,roboto,noto,"segoe ui",arial,sans-serif";
+    font-family: -apple-system,BlinkMacSystemFont,"helvetica neue",helvetica,roboto,noto,"segoe ui",arial,sans-serif;
 }
 
 #feedback-app a.button {
