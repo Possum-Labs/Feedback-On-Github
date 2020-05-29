@@ -107,7 +107,7 @@ feedbackOnGithub.init = function(config){
                         {{issue.comments}}
                     </span>
                     <div class="issue-details" v-if="issue.expand"> 
-                        <div class="issue-body">
+                        <div class="issue-summary">
                             {{issue.body_nice}}
                         </div>
                         <div class="issue-comments">
