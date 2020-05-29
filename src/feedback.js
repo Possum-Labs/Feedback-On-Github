@@ -72,11 +72,11 @@ feedbackOnGithub.init = function(config){
                 <div class="comment">
                     <h4 class="comment-title">
 						<span>
-                            <a class="comment-author" v-bind:href="comment.user.url">
+                            <a class="comment-author" v-bind:href="comment.user.url" target="_blank">
                                 {{comment.user.login}}
                             </a> 
                             commented 
-                		    <a class="comment-date" v-bind:href="comment.html_url">
+                		    <a class="comment-date" v-bind:href="comment.html_url" target="_blank">
                 			    <time v-bind:datetime="comment.created_at">on {{comment.created_at_local}}</time>
                 		    </a>
                 		</span>
