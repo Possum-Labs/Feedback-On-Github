@@ -93,10 +93,33 @@ feedbackOnGithub.init = function(config){
                 <div class="issue">
                     <button v-on:click="$emit('toggle-commnets', issue)">
                         <div v-show="issue.expand">
-                            <span  class="iconify" data-icon="ic-baseline-arrow-drop-down" data-inline="false"></span>
+                            <svg xmlns="http://www.w3.org/2000/svg" 
+                                xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                aria-hidden="true" 
+                                focusable="false" 
+                                width="1em" 
+                                height="1em" 
+                                preserveAspectRatio="xMidYMid meet" 
+                                viewBox="6 6 12 12" 
+                                data-icon="ic-baseline-arrow-right" 
+                                data-inline="false" 
+                                class="iconify" 
+                                style="transform: rotate(360deg);">
+                                <path d="M10 17l5-5l-5-5v10z" fill="currentColor"></path>
+                            </svg>
                         </div>
                         <div v-show="!issue.expand">
-                            <span class="iconify" data-icon="ic-baseline-arrow-right" data-inline="false"></span>
+                            <svg xmlns="http://www.w3.org/2000/svg" 
+                                xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                aria-hidden="true" 
+                                focusable="false" 
+                                width="1em" 
+                                height="1em" 
+                                style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" 
+                                preserveAspectRatio="xMidYMid meet" 
+                                viewBox="6 6 12 12>
+                                <path d="M7 10l5 5l5-5z" fill="#626262"/>
+                            </svg>
                         </div>
                     </button>
                     <a v-bind:href="issue.html_url" target="_blank">{{issue.title}} #{{issue.number}}</a> 
