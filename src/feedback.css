@@ -1,61 +1,50 @@
-.issue{
-
+#feedback-app {
+    font-family: -apple-system,BlinkMacSystemFont,"helvetica neue",helvetica,roboto,noto,"segoe ui",arial,sans-serif;
+    color: #333;
 }
 
-.comment{
-
-}
-
-.comment-count{
-
-}
-
-.comment-title{
-
-}
-
-.comment-author{
-
-}
-
-.comment-date{
-    
-}
-
-.tab {
-
+.feedback-content {
+    background-color: #efefef;
+    border-radius: 8px;
+    padding: 12px 20px;
 }
 
 #feedback-app a.button {
-border: 1px solid #eee;
-background-color: #eee;
-color: #333;
-padding: 8px 12px;
-margin-right: 4px;
-margin-bottom: 20px;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    padding: 8px 12px;
+    margin-right: 4px;
+    text-decoration: none;
 }
 
 #feedback-app a.button:hover {
-border: 1px solid #ccc;
-background-color: #ccc;
+    border: 1px solid #ccc;
+    background-color: #ccc;
 }
 
 #feedback-app li {
-list-style: none;
-display: inline-block;
-margin: 0;
-margin-right: 8px;
+    list-style: none;
+    display: inline-block;
 }
 
 #feedback-app ul {
-padding-inline-start: 0;
-border-bottom: 1px solid #ccc;
+    padding-inline-start: 0;
+    border-bottom: 1px solid #ddd;
 }
 
 #feedback-app li button {
-border: none;
+    border: none;
+    font-weight: unset;
+    font-size: 1em;
+    background: none;
 }
 
 #feedback-app li.active {
-font-weight: bold;
+    font-weight: bold;
+}
+
+#feedback-app .issue {
+    margin-bottom: 12px;
 }
