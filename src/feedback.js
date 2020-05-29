@@ -101,11 +101,11 @@ feedbackOnGithub.init = function(config){
                                 height="1em" 
                                 preserveAspectRatio="xMidYMid meet" 
                                 viewBox="6 6 12 12" 
-                                data-icon="ic-baseline-arrow-right" 
+                                data-icon="ic-baseline-arrow-drop-down" 
                                 data-inline="false" 
                                 class="iconify" 
                                 style="transform: rotate(360deg);">
-                                <path d="M10 17l5-5l-5-5v10z" fill="currentColor"></path>
+                                <path d="M7 10l5 5l5-5z" fill="currentColor"></path>
                             </svg>
                         </div>
                         <div v-show="!issue.expand">
@@ -115,10 +115,13 @@ feedbackOnGithub.init = function(config){
                                 focusable="false" 
                                 width="1em" 
                                 height="1em" 
-                                style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" 
                                 preserveAspectRatio="xMidYMid meet" 
-                                viewBox="6 6 12 12>
-                                <path d="M7 10l5 5l5-5z" fill="#626262"/>
+                                viewBox="6 6 12 12" 
+                                data-icon="ic-baseline-arrow-right" 
+                                data-inline="false" 
+                                class="iconify" 
+                                style="transform: rotate(360deg);">
+                                <path d="M10 17l5-5l-5-5v10z" fill="currentColor"></path>
                             </svg>
                         </div>
                     </button>
