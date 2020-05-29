@@ -48,8 +48,3 @@
 #feedback-app .issue {
     margin-bottom: 12px;
 }
-
-#feedback-app .issue button {
-    border-width: 0;
-    background: none;
-}
