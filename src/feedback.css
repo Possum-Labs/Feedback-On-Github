@@ -48,3 +48,8 @@
 #feedback-app .issue {
     margin-bottom: 12px;
 }
+
+#feedback-app .issue-details {
+    text-indent: 32px;
+    margin-top: 12px;
+}
