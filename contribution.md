@@ -22,3 +22,6 @@ This is a tiny project and Bas' first experience w/ Vue.js. So chances are it co
 First off, take a look at the code and see if you want to work on this codebase. The second thing you need is something you want to implement. Feel free to reach out to bas@possumlabs.com to set up some time to discuss the plan if you'd like. 
 
 From a code perspective, we care about a few things. Keep it Simple; we currently have dependencies on a few large projects (Vue.js, jQueury). Our assumption is our users utilize a desktop browser, so the size is irrelevant. Leveraging these projects, we can keep the volume of maintained code as low.  
+
+## Last but not Least
+Read the (Code of Conduct)[]
