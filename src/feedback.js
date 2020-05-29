@@ -96,7 +96,7 @@ feedbackOnGithub.init = function(config){
                             <span  class="iconify" data-icon="mdi:chevron-up-circle" data-inline="false"></span>
                         </div>
                         <div v-show="!issue.expand">
-                            <span class="iconify" data-icon="mdi:chevron-down-circle" data-inline="false"></span>
+                            <span class="iconify" data-icon="mdi:chevron-right-circle" data-inline="false"></span>
                         </div>
                     </button>
                     <a v-bind:href="issue.html_url" target="_blank">{{issue.title}} #{{issue.number}}</a> 
