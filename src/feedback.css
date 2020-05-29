@@ -52,4 +52,6 @@
 #feedback-app .issue-details {
     text-indent: 32px;
     margin-top: 12px;
+    margin-bottom: 20px;
+    font-size: .9em;
 }
