@@ -29,6 +29,7 @@
 #feedback-app a.button {
 border: 1px solid #eee;
 background-color: #eee;
+color: #333;
 padding: 8px 12px;
 margin-right: 4px;
 margin-bottom: 20px;
@@ -47,9 +48,8 @@ margin-right: 8px;
 }
 
 #feedback-app ul {
-display: inline-block;
 padding-inline-start: 0;
-border-bottom: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
 }
 
 #feedback-app li button {
