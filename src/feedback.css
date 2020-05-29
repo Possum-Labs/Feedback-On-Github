@@ -30,9 +30,15 @@
     font-family: -apple-system,BlinkMacSystemFont,"helvetica neue",helvetica,roboto,noto,"segoe ui",arial,sans-serif;
 }
 
-#feedback-app a.button {
-    border: 1px solid #eee;
+.feedback-content {
     background-color: #eee;
+    border-radius: 8px;
+    padding: 12px 20px;
+}
+
+#feedback-app a.button {
+    border: 1px solid #fff;
+    background-color: #fff;
     color: #333;
     padding: 8px 12px;
     margin-right: 4px;
