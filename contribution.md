@@ -25,3 +25,10 @@ From a code perspective, we care about a few things. Keep it Simple; we currentl
 
 ## Last but not Least
 Read the [Code of Conduct](https://feedback-on-github.possumlabs.com/code-of-conduct.html)
+
+
+### Videos
+
+#### PossumLabs Feeback on GitHub Contribution Guide: Intro
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TB83kaX3y74" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
