@@ -39,6 +39,8 @@ and then a simple tag where you wish to include the feedback section
 <feedback>
 ```
 
+Please note some styles are overwritten on our site, and we try to make that easy. For the default styles, please see our [sample page](https://feedback-on-github.possumlabs.com/src/sample.html).
+
 ### Videos
 
 #### PossumLabs Feeback on GitHub: Intro
