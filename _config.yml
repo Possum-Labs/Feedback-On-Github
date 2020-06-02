@@ -1,7 +1,7 @@
 remote_theme: pmarsceill/just-the-docs
-title: Possum Labs Feedback on Github
+title: Possum Labs Feedback on GitHub
 aux_links:
-  "Possum Labs DSL Feedback on Github":
+  "Possum Labs DSL Feedback on GitHub":
     - "https://github.com/Possum-Labs/Feedback-On-Github"
 aux_links_new_tab: true
 url: "https://feedback-on-github.possumlabs.com"
