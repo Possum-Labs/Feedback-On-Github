@@ -128,9 +128,8 @@ $link-color: $blue-100;
 //xl: 1400px
 //);
 
-@media (min-width: 31.25rem)
-.site-title {
-    font-size: 22px !important;
+@media (min-width: 31.25rem) {
+    .site-title {font-size: 22px !important;}
 }
 
 .site-footer {
