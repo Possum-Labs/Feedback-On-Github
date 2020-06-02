@@ -32,16 +32,19 @@
 
                 <ul role="tablist">
                     <li class="tab" v-bind:class="{ active: viewOpen }" >
-                        <button data-toggle="tab" role="tab"
+                        <button                             
+                            data-toggle="tab" role="tab"
                             aria-controls="open-issues"
                             v-on:click="viewOpenClick"
-                            >Open ({{openCount}})</button>
+                            ><label id="open-issues-tab">Open ({{openCount}})</label></button>
                     </li>
                     <li  v-bind:class="{ active: viewClosed }" >
-                        <button   data-toggle="tab" role="tab"
+                        <button                              
+                            data-toggle="tab" 
+                            role="tab"
                             aria-controls="closed-issues"
                             v-on:click="viewClosedClick"
-                            >Closed ({{closedCount}})</button>
+                            ><label id="closed-issues-tab" >Closed ({{closedCount}})</label></button>
                     </li>
                 </ul>
                 <div  >
