@@ -92,7 +92,7 @@ feedbackOnGithub.init = function(config){
                 template: `
                 <div class="issue">
                     <button v-on:click="$emit('toggle-commnets', issue)" 
-                        aria-label="expand / colapse comments">
+                        aria-label="expand / collapse comments">
                         <div v-show="issue.expand">
                             <svg xmlns="http://www.w3.org/2000/svg" 
                                 xmlns:xlink="http://www.w3.org/1999/xlink" 
