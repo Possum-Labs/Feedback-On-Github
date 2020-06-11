@@ -55,7 +55,7 @@
                         <issue-view
                             v-for="issue in openIssues"
                             v-bind:issue="issue"
-                            v-on:toggle-commnets="expandIssueClick($event)"
+                            v-on:toggle-comments="expandIssueClick($event)"
                             ></issue-view>
                     </div>
                     <div role="tabpanel" 
@@ -65,7 +65,7 @@
                         <issue-view
                         v-for="issue in closedIssues"
                         v-bind:issue="issue"
-                        v-on:toggle-commnets="expandIssueClick($event)"
+                        v-on:toggle-comments="expandIssueClick($event)"
                         ></issue-view>
 
                     </div>
