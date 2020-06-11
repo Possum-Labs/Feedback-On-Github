@@ -1,6 +1,6 @@
-## Welcome to Feedback on Github
+## Welcome to Feedback on GitHub
 
-Feedback on Github is a simple component to include on your documentation pages; specifically those hosted as Github pages. Not only do we want to solicit feedback, but also to show and integrate that feedback automatically back into the documentation. We want to make that as simple as including some javascript and a tag on the pages that we want to include the feedback integration for.
+Feedback on GitHub is a simple component to include on your documentation pages. Not only do we want to help make it easier to ask for feedback, but we also want to automatically display and integrate that feedback directly into the documentation. We hope to make enabling feedback as quick as including some JavaScript and an HTML tag on the documentation pages that need it.
 
 ### Setup
 
@@ -15,7 +15,7 @@ Include the following references
 <link rel="stylesheet" type="text/css" href="https://feedback-on-github.possumlabs.com/src/feedback.css"></link>
 ```
 
-and the following javascript
+and the following JavaScript
 
 ```javascript
 $(function() {
@@ -28,7 +28,7 @@ $(function() {
 });
 ```
 
-and then a simple tag where you wish to include the feedback section
+and then a custom tag where you wish to include the feedback section
 
 ```javascript
 <feedback>

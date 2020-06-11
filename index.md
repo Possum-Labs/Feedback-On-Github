@@ -5,7 +5,7 @@ nav_order: 1
 ---
 ## Welcome to Feedback on GitHub
 
-Feedback on GitHub is a simple component to include on your documentation pages---specifically, those hosted as GitHub pages. Not only do we want to help encourage feedback, but also to automatically display and integrate that feedback back into the documentation. We hope to make enabling feedback as quick as including some JavaScript and an HTML tag on the documentation pages that need it.
+Feedback on GitHub is a simple component to include on your documentation pages. Not only do we want to help make it easier to ask for feedback, but we also want to automatically display and integrate that feedback directly into the documentation. We hope to make enabling feedback as quick as including some JavaScript and an HTML tag on the documentation pages that need it.
 
 ### Setup
 
